@@ -279,16 +279,18 @@ void arithmetic(){
         arithmetic();
         break;
     case 7:
-        cout << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         main();
         break;
     case 8:
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "Thank You! For using this Software." << endl;
         cout << "\npress any key to close the program" << endl;
         getch();
         break;
     default:
-        cout << "\n''You have given WRONG Input.''" << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "''You have given WRONG Input.''" << endl;
         arithmetic();
         break;
     } 
