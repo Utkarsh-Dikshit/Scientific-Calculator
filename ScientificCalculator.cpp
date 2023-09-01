@@ -83,12 +83,14 @@ int main(){
         conversion();
         break;
     case 9:
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "Thank You! For using this Software." << endl;
         cout << "\npress any key to close the program" << endl;
         getch();
         break;
     default:
-        cout << "\n''Invalid Operation''" << endl << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "''Invalid Operation''" << endl << endl;
         main();
         break;
     }
@@ -117,12 +119,14 @@ void conversion(){
     cout << "Choose the option: ";
     cin >> option;
 
+    cout << endl;
+
     if (option == 1){
         string binary;
         cout << "Enter the Binary Number: ";
         cin >> binary;
         cout << "Decimal Number = " << Bin_Dec(binary) << endl;
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 2){
@@ -130,7 +134,7 @@ void conversion(){
         cout << "Enter the Octal Number: ";
         cin >> octal;
         cout << "Decimal Number = " << Oct_Dec(octal) << endl;
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 3){
@@ -138,7 +142,7 @@ void conversion(){
         cout << "Enter the Hexadecimal Number: ";
         cin >> hexa;
         cout << "Hexadecimal Number = " << Hex_Dec(hexa) << endl;
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 4){
@@ -146,7 +150,7 @@ void conversion(){
         cout << "Enter the Decimal Number: ";
         cin >> decimal;
         cout << "Binary Number = " << Dec_Bin(decimal);
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 5){
@@ -154,7 +158,7 @@ void conversion(){
         cout << "Enter the Decimal Number: ";
         cin >> decimal;
         cout << "Octal Number = " << Dec_Oct(decimal);
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 6){
@@ -162,7 +166,7 @@ void conversion(){
         cout << "Enter the Decimal Number: ";
         cin >> decimal;
         cout << "Hexadecimal Number = " << Dec_Hex(decimal);
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 7){
@@ -170,7 +174,7 @@ void conversion(){
         cout << "Enter the Octal Number: ";
         cin >> octal;
         cout << "Hexadecimal Number = " << Oct_Hex(octal);
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 8){
@@ -179,7 +183,7 @@ void conversion(){
         cin >> hexa;
         cout << "Octal Number = " << Hex_Oct(hexa);
 
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 9){
@@ -188,7 +192,7 @@ void conversion(){
         cin >> binary;
         cout << "Hexadecimal Number = " << Bin_Hex(binary);
 
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 10){
@@ -197,7 +201,7 @@ void conversion(){
         cin >> hexa;
         cout << "Binary Number = " << Hex_Bin(hexa);
 
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 11){
@@ -206,7 +210,7 @@ void conversion(){
         cin >> binary;
         cout << "Octal Number = " << Bin_Oct(binary);
 
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 12){
@@ -215,21 +219,25 @@ void conversion(){
         cin >> octal;
         cout << "Binary Number = " << Oct_Bin(octal);
 
-        cout << "\n*******************************************************************************\n";
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else if (option == 13){
+        cout << "\n------------------------------------------------------------------------" << endl;
         operation_number_system();
     }
     else if (option == 14){
+        cout << "\n------------------------------------------------------------------------" << endl;
         main();
     }
     else if (option == 15){
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "Thank You! For using this Software." << endl;
         cout << "\npress any key to close the program" << endl;
         getch();
     }
     else {
+        cout << "\n------------------------------------------------------------------------" << endl;
         cout << "Error! WRONG INPUT " << endl;
         conversion();
     }
@@ -291,6 +299,7 @@ void arithmetic(){
     default:
         cout << "\n------------------------------------------------------------------------" << endl;
         cout << "''You have given WRONG Input.''" << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         arithmetic();
         break;
     } 
@@ -319,7 +328,7 @@ void trigonometric(){
     // Below 'IF' Command will not be run for 7th and 8th option
     if ((opt3 == 1) || (opt3 == 2) || (opt3 == 3) || (opt3 == 4) || (opt3 == 5) || (opt3 == 6)) {
 
-        cout << "\nIf you would like to give input as Radian, type '1' or for Degree, type '2'." << endl;
+        cout << "\nIf you would like to give input as Radian (type '1') or for Degree (type '2')" << endl;
         cin >> ty;
         
         if (ty == 1) {      
@@ -335,7 +344,8 @@ void trigonometric(){
         }
         
         else {
-            cout << "''You have given WRONG Input.''";
+            cout << "------------------------------------------------------------------------" << endl;
+            cout << "''You have given WRONG Input.''" << endl;
             trigonometric();
         }
     }
@@ -345,120 +355,118 @@ void trigonometric(){
     case 1:
         if ( (int(val)) % 90 == 0 ){
             cout << "Sin (" << val << ") = " << int (sin(temp)) << endl; // i.e., 0
-            trigonometric();
         }
         else {
             cout << "Sin (" << val << ") = " << sin(temp) << endl;
-            trigonometric();
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 2:
         if ( ((int(val)) % 90 == 0) ){
-            cout << "Cos (" << val << ") = " << int (cos(temp)) << endl; /* i.e., 0*/
-            trigonometric();
+            cout << "Cos (" << val << ") = " << int (cos(temp)) << endl; /* i.e., 0*/            
         }
         else {
-            cout << "Cos (" << val << ") = " << cos(temp) << endl;
-            trigonometric();
+            cout << "Cos (" << val << ") = " << cos(temp) << endl;         
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 3:
         if (ty == 2){
             if ((int(val)) % 90 == 0){
                 if (int (cos(temp)) == 0){
-                    cout << "Tan (" << val << ") = Not Defined" << endl;
-                    trigonometric();
+                    cout << "Tan (" << val << ") = Not Defined" << endl;                   
                 }
                 else {
-                    cout << "Tan (" << val << ") = " << int(tan(temp)) << endl;
-                    trigonometric();
+                    cout << "Tan (" << val << ") = " << int(tan(temp)) << endl;                    
                 }
             }
             else {
-                cout << "Tan (" << val << ") = " << tan(temp) << endl;
-                trigonometric();
+                cout << "Tan (" << val << ") = " << tan(temp) << endl;               
             }
         }
         
         else {
-            cout << "Tan (" << val << ") = " << tan(temp) << endl;
-            trigonometric();
+            cout << "Tan (" << val << ") = " << tan(temp) << endl;          
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 4:
         if (ty == 2){
             if ((int(val)) % 90 == 0){
                 if (int (sin(temp)) == 0){
-                    cout << "Cosec (" << val << ") = Not Defined" << endl;
-                    trigonometric();
+                    cout << "Cosec (" << val << ") = Not Defined" << endl;                  
                 }
                 else {
-                    cout << "Cosec (" << val << ") = " << int(1/sin(temp)) << endl;
-                    trigonometric();
+                    cout << "Cosec (" << val << ") = " << int(1/sin(temp)) << endl;                   
                 }
             }
             else {
-                cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;
-                trigonometric();
+                cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;               
             }
         }
         else{
-            cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;
-            trigonometric();
+            cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;           
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 5:
         if (ty == 2){
             if ((int(val)) % 90 == 0){
                 if (int (cos(temp)) == 0){
-                    cout << "Sec (" << val << ") = Not Defined" << endl;
-                    trigonometric();
+                    cout << "Sec (" << val << ") = Not Defined" << endl;                 
                 }
                 else {
-                    cout << "Sec (" << val << ") = " << int(1/cos(temp)) << endl;
-                    trigonometric();
+                    cout << "Sec (" << val << ") = " << int(1/cos(temp)) << endl;                 
                 }
             }
             else {
-                cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;
-                trigonometric();
+                cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;              
             }
         }
         else {
-            cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;
-            trigonometric();
+            cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;          
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 6:
         if (ty == 2){
             if ((int(val)) % 90 == 0){
                 if (int (sin(temp)) == 0){
-                    cout << "Cot (" << val << ") = Not Defined" << endl;
-                    trigonometric();
+                    cout << "Cot (" << val << ") = Not Defined" << endl;                   
                 }
                 else {
-                    cout << "Cot (" << val << ") = " << int(1/tan(temp)) << endl;
-                    trigonometric();
+                    cout << "Cot (" << val << ") = " << int(1/tan(temp)) << endl;                   
                 }
             }
             else {
-                cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;
-                trigonometric();
+                cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;               
             }
         }
         else{
-            cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;
-            trigonometric();
+            cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;           
         }
+        cout << "------------------------------------------------------------------------" << endl;
+        trigonometric();
         break;
     case 7:
+        cout << "------------------------------------------------------------------------" << endl;
         main();
         break;
     case 8:
-        cout << "\nThank You! For using this Software." << endl;
+         cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
         break;
     default:
-        cout << "\n''You have given WRONG Input.''" << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "''You have given WRONG Input.''" << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         trigonometric();
         break;
     }
@@ -491,35 +499,46 @@ void invtrigo(){
     switch(opt4){
     case 1:
         cout << "ArcSin ( " << val << " ) = " << asin(val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 2:
         cout << "ArcCos ( " << val << " ) = " << acos(val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 3:
         cout << "ArcTan ( " << val << " ) = " << atan(val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 4:
         cout << "ArcCosec ( " << val << " ) = " << asin(1/val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 5:
         cout << "ArcSec ( " << val << " ) = " << acos(1/val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 6:
         cout << "ArcCot ( " << val << " ) = " << atan(1/val) << endl;
+        cout << "------------------------------------------------------------------------" << endl;
         invtrigo();
         break;
     case 7:
+        cout << "\n------------------------------------------------------------------------" << endl;
         main();
         break;
     case 8:
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "\n------------------------------------------------------------------------" << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
         break;
     default:
+        cout << "------------------------------------------------------------------------" << endl;
         cout << "''You have given WRONG Input.''" << endl;
         invtrigo();
         break;
@@ -536,8 +555,8 @@ void exponential(){
     cout << "Enter exponent : ";
     cin >> exp;
 
-    cout << "The " << base << " to the power " << exp << " = " <<  pow(base, exp) << endl << endl;
-
+    cout << base << " to the power " << exp << " = " <<  pow(base, exp) << endl;
+    cout << "------------------------------------------------------------------------" << endl;
     cho_exp();
     return;
 }
@@ -551,6 +570,7 @@ void cho_exp(){
     
     cout << "Choose : ";
     cin >> opt5;
+    cout << "------------------------------------------------------------------------" << endl;
 
     if (opt5 == 1){
         exponential();
@@ -559,7 +579,9 @@ void cho_exp(){
         main();
     }
     else if (opt5 == 3){
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
     }
     else {
         cout << "''You have given WRONG Input.''" << endl << endl;
@@ -574,8 +596,8 @@ void logarithmic(){
     cout << "\nEnter the value to calculate the log(e) : ";
     cin >> value;
     
-    cout << "The value of log(e)(" << value << ") = " << log(value) << endl << endl;
-
+    cout << "The value of log(e)(" << value << ") = " << log(value) << endl;
+    cout << "------------------------------------------------------------------------" << endl;
     cho_log();
     return;    
 }
@@ -589,7 +611,7 @@ void cho_log(){
         
     cout << "Choose : ";
     cin >> opt6;
-
+    cout << "------------------------------------------------------------------------" << endl;
     if (opt6 == 1){
         logarithmic();
     }
@@ -597,7 +619,9 @@ void cho_log(){
         main();
     }
     else if (opt6 == 3){
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
     }
     else {
         cout << "''You have given WRONG Input.''" << endl << endl;
@@ -621,23 +645,23 @@ void quad_equ(){
         cout << "Roots are Real and Unequal.\n";
         root1 = (-b + sqrt(disc))/(2*a);
         root2 = (-b - sqrt(disc))/(2*a);
-        cout << "Root 1 = " << root1 <<endl << "Root 2 = " << root2 << endl << endl;
+        cout << "Root_1 = " << root1 <<endl << "Root_2 = " << root2 << endl;
     }
     // For Real and Equal Roots
     else if (disc == 0){
         cout << "Roots are Real and Equal.\n";
         root1 = -b/(2*a);
-        cout << "Root 1 = Root 2 = " << root1 << endl << endl;
+        cout << "Root_1 = Root_2 = " << root1 << endl;
     }
     // For Unreal Roots
     else {
         cout << "Roots are Unreal.\n";
         real_part = -b/(2*a);
         imaginary_part = sqrt(-disc)/(2*a);
-        cout << "Unreal Root 1 = " << real_part << " + (" << imaginary_part << ")i" << endl <<
-                "Unreal Root 2 = " << real_part << " - (" << imaginary_part << ")i" << endl << endl;
+        cout << "Unreal_Root_1 = " << real_part << " + (" << imaginary_part << ")i" << endl <<
+                "Unreal_Root_2 = " << real_part << " - (" << imaginary_part << ")i" << endl;
     }
-
+    cout << "------------------------------------------------------------------------" << endl;
     cho_quad();
     return;
 }
@@ -653,7 +677,7 @@ void cho_quad(){
     
     cout << "Choose : ";
     cin >> opt7;
-
+    cout << "------------------------------------------------------------------------" << endl;
     if (opt7 == 1){
         quad_equ();
     }
@@ -661,7 +685,9 @@ void cho_quad(){
         main();
     }
     else if (opt7 == 3){
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
     }
     else {
         cout << "''You have given WRONG Input.''" << endl << endl;
@@ -733,8 +759,9 @@ void cubic_equ(){
     cout << "\nRoots:" << endl <<
             "  x1 = " << x1_real << endl <<
             "  x2 = " << x2_real << x2_imag_s << endl <<
-            "  x3 = " << x3_real << x3_imag_s << endl << endl;
+            "  x3 = " << x3_real << x3_imag_s << endl;
     
+    cout << "------------------------------------------------------------------------" << endl;
     cho_cub();
     return;
 }
@@ -750,7 +777,7 @@ void cho_cub(){
     
     cout << "Choose : ";
     cin >> opt8;
-
+    cout << "------------------------------------------------------------------------" << endl;
     if (opt8 == 1){
         cubic_equ();
     }
@@ -758,7 +785,9 @@ void cho_cub(){
         main();
     }
     else if (opt8 == 3){
-        cout << "\nThank You! For using this Software." << endl;
+        cout << "Thank You! For using this Software." << endl;
+        cout << "\npress any key to close the program" << endl;
+        getch();
     }
     else {
         cout << "''You have given WRONG Input.''" << endl << endl;
@@ -1249,6 +1278,7 @@ void operation_number_system(){
     
     cout << "Choose: ";
     cin >> option;
+    cout << endl;
 
     string num1, num2;
     char ch;
@@ -1261,20 +1291,21 @@ void operation_number_system(){
         cout << "Enter second Binary Number: ";
         cin >> num2;
         if (ch == '+'){
-            cout << "Result = " << Dec_Bin(to_string(stod(Bin_Dec(num1))+stod(Bin_Dec(num2))));
+            cout << "\nResult = " << Dec_Bin(to_string(stod(Bin_Dec(num1))+stod(Bin_Dec(num2)))) << endl;
         }
         else if (ch == '-'){
-            cout << "Result = " << Dec_Bin(to_string(stod(Bin_Dec(num1))-stod(Bin_Dec(num2))));
+            cout << "\nResult = " << Dec_Bin(to_string(stod(Bin_Dec(num1))-stod(Bin_Dec(num2)))) << endl;
         }
         else if (ch == '*'){
-            cout << "Result = " << Dec_Bin(to_string(stod(Bin_Dec(num1))*stod(Bin_Dec(num2))));
+            cout << "\nResult = " << Dec_Bin(to_string(stod(Bin_Dec(num1))*stod(Bin_Dec(num2)))) << endl;
         }
         else if (ch == '/'){
-            cout << "Result = " << Dec_Bin(to_string(stod(Bin_Dec(num1))/stod(Bin_Dec(num2))));
+            cout << "\nResult = " << Dec_Bin(to_string(stod(Bin_Dec(num1))/stod(Bin_Dec(num2)))) << endl;
         }
         else {
             cout << "Wrong Input!" << endl;
         }
+        cout << "------------------------------------------------------------------------" << endl;
         operation_number_system();
     }
 
@@ -1286,20 +1317,21 @@ void operation_number_system(){
         cout << "Enter second Octal Number: ";
         cin >> num2;
         if (ch == '+'){
-            cout << "Result = " << Dec_Oct(to_string(stod(Oct_Dec(num1))+stod(Oct_Dec(num2))));
+            cout << "\nResult = " << Dec_Oct(to_string(stod(Oct_Dec(num1))+stod(Oct_Dec(num2)))) << endl;
         }
         else if (ch == '-'){
-            cout << "Result = " << Dec_Oct(to_string(stod(Oct_Dec(num1))-stod(Oct_Dec(num2))));
+            cout << "\nResult = " << Dec_Oct(to_string(stod(Oct_Dec(num1))-stod(Oct_Dec(num2)))) << endl;
         }
         else if (ch == '*'){
-            cout << "Result = " << Dec_Oct(to_string(stod(Oct_Dec(num1))*stod(Oct_Dec(num2))));
+            cout << "\nResult = " << Dec_Oct(to_string(stod(Oct_Dec(num1))*stod(Oct_Dec(num2)))) << endl;
         }
         else if (ch == '/'){
-            cout << "Result = " << Dec_Oct(to_string(stod(Oct_Dec(num1))/stod(Oct_Dec(num2))));
+            cout << "\nResult = " << Dec_Oct(to_string(stod(Oct_Dec(num1))/stod(Oct_Dec(num2)))) << endl;
         }
         else {
             cout << "Wrong Input!" << endl;
         }
+        cout << "------------------------------------------------------------------------" << endl;
         operation_number_system();
     }
 
@@ -1311,28 +1343,31 @@ void operation_number_system(){
         cout << "Enter second Hexadecimal Number: ";
         cin >> num2;
         if (ch == '+'){
-            cout << "Result = " << Dec_Hex(to_string(stod(Hex_Dec(num1))+stod(Hex_Dec(num2))));
+            cout << "\nResult = " << Dec_Hex(to_string(stod(Hex_Dec(num1))+stod(Hex_Dec(num2)))) << endl;
         }
         else if (ch == '-'){
-            cout << "Result = " << Dec_Hex(to_string(stod(Hex_Dec(num1))-stod(Hex_Dec(num2))));
+            cout << "\nResult = " << Dec_Hex(to_string(stod(Hex_Dec(num1))-stod(Hex_Dec(num2)))) << endl;
         }
         else if (ch == '*'){
-            cout << "Result = " << Dec_Hex(to_string(stod(Hex_Dec(num1))*stod(Hex_Dec(num2))));
+            cout << "\nResult = " << Dec_Hex(to_string(stod(Hex_Dec(num1))*stod(Hex_Dec(num2)))) << endl;
         }
         else if (ch == '/'){
-            cout << "Result = " << Dec_Hex(to_string(stod(Hex_Dec(num1))/stod(Hex_Dec(num2))));
+            cout << "\nResult = " << Dec_Hex(to_string(stod(Hex_Dec(num1))/stod(Hex_Dec(num2)))) << endl;
         }
         else {
             cout << "Wrong Input!" << endl;
         }
+        cout << "------------------------------------------------------------------------" << endl;
         operation_number_system();
     }
 
     else if (option == 4){
+        cout << "------------------------------------------------------------------------" << endl;
         conversion();
     }
     else {
-        cout << "Wrong Input!" << endl;
+        cout << "\nWrong Input!" << endl;
+        cout << "------------------------------------------------------------------------";
         operation_number_system();
     }
 }
