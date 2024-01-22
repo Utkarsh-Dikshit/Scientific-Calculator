@@ -312,6 +312,8 @@ void trigonometric(){
     double temp;
     const long double pi = 3.1415926535897932384626433832795;
 
+    bool is_WrongInput = false;
+
     cout << "\nTrigonometric Functions : "
     "\n1. Sine"
     "\n2. Cosine"
@@ -340,135 +342,139 @@ void trigonometric(){
         else if (ty == 2) {
             cout << "Enter value (only in degree) : ";
             cin >> val;
-            temp = val*(pi/180);
+            temp = val*(pi/180); // converting to radian
         }
         
         else {
             cout << "------------------------------------------------------------------------" << endl;
             cout << "''You have given WRONG Input.''" << endl;
             trigonometric();
+            is_WrongInput = true;
         }
     }
 
-    switch(opt3) {
-       
-    case 1:
-        if ( (int(val)) % 90 == 0 ){
-            cout << "Sin (" << val << ") = " << int (sin(temp)) << endl; // i.e., 0
-        }
-        else {
-            cout << "Sin (" << val << ") = " << sin(temp) << endl;
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 2:
-        if ( ((int(val)) % 90 == 0) ){
-            cout << "Cos (" << val << ") = " << int (cos(temp)) << endl; /* i.e., 0*/            
-        }
-        else {
-            cout << "Cos (" << val << ") = " << cos(temp) << endl;         
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 3:
-        if (ty == 2){
-            if ((int(val)) % 90 == 0){
-                if (int (cos(temp)) == 0){
-                    cout << "Tan (" << val << ") = Not Defined" << endl;                   
-                }
-                else {
-                    cout << "Tan (" << val << ") = " << int(tan(temp)) << endl;                    
-                }
-            }
-            else {
-                cout << "Tan (" << val << ") = " << tan(temp) << endl;               
-            }
-        }
+    if (!is_WrongInput){
+        switch(opt3) {
         
-        else {
-            cout << "Tan (" << val << ") = " << tan(temp) << endl;          
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 4:
-        if (ty == 2){
-            if ((int(val)) % 90 == 0){
-                if (int (sin(temp)) == 0){
-                    cout << "Cosec (" << val << ") = Not Defined" << endl;                  
+        case 1:
+            if ( (int(val)) % 90 == 0 ){
+                cout << "Sin (" << val << ") = " << int (sin(temp)) << endl;
+                cout << temp << endl;
+            }
+            else {
+                cout << "Sin (" << val << ") = " << sin(temp) << endl;
+            }
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 2:
+            if (((int(val)) % 90 == 0) ){
+                cout << "Cos (" << val << ") = " << int (cos(temp)) << endl;           
+            }
+            else {
+                cout << "Cos (" << val << ") = " << cos(temp) << endl;         
+            }
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 3:
+            if (ty == 2){
+                if ((int(val)) % 90 == 0){
+                    if (int (cos(temp)) == 0){
+                        cout << "Tan (" << val << ") = Not Defined" << endl;                   
+                    }
+                    else {
+                        cout << "Tan (" << val << ") = " << int(tan(temp)) << endl;                    
+                    }
                 }
                 else {
-                    cout << "Cosec (" << val << ") = " << int(1/sin(temp)) << endl;                   
+                    cout << "Tan (" << val << ") = " << tan(temp) << endl;               
+                }
+            }
+
+            else {
+                cout << "Tan (" << val << ") = " << tan(temp) << endl;          
+            }
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 4:
+            if (ty == 2){
+                if ((int(val)) % 90 == 0){
+                    if (int (sin(temp)) == 0){
+                        cout << "Cosec (" << val << ") = Not Defined" << endl;                  
+                    }
+                    else {
+                        cout << "Cosec (" << val << ") = " << int(1/sin(temp)) << endl;                   
+                    }
+                }
+                else {
+                    cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;               
+                }
+            }
+            else{
+                cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;           
+            }
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 5:
+            if (ty == 2){
+                if ((int(val)) % 90 == 0){
+                    if (int (cos(temp)) == 0){
+                        cout << "Sec (" << val << ") = Not Defined" << endl;                 
+                    }
+                    else {
+                        cout << "Sec (" << val << ") = " << int(1/cos(temp)) << endl;                 
+                    }
+                }
+                else {
+                    cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;              
                 }
             }
             else {
-                cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;               
+                cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;          
             }
-        }
-        else{
-            cout << "Cosec (" << val << ") = " << 1/sin(temp) << endl;           
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 5:
-        if (ty == 2){
-            if ((int(val)) % 90 == 0){
-                if (int (cos(temp)) == 0){
-                    cout << "Sec (" << val << ") = Not Defined" << endl;                 
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 6:
+            if (ty == 2){
+                if ((int(val)) % 90 == 0){
+                    if (int (sin(temp)) == 0){
+                        cout << "Cot (" << val << ") = Not Defined" << endl;                   
+                    }
+                    else {
+                        cout << "Cot (" << val << ") = " << int(1/tan(temp)) << endl;                   
+                    }
                 }
                 else {
-                    cout << "Sec (" << val << ") = " << int(1/cos(temp)) << endl;                 
+                    cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;               
                 }
             }
-            else {
-                cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;              
+            else{
+                cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;           
             }
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
+        case 7:
+            cout << "------------------------------------------------------------------------" << endl;
+            main();
+            break;
+        case 8:
+             cout << "\n------------------------------------------------------------------------" << endl;
+            cout << "Thank You! For using this Software." << endl;
+            cout << "\npress any key to close the program" << endl;
+            getch();
+            break;
+        default:
+            cout << "\n------------------------------------------------------------------------" << endl;
+            cout << "''You have given WRONG Input.''" << endl;
+            cout << "------------------------------------------------------------------------" << endl;
+            trigonometric();
+            break;
         }
-        else {
-            cout << "Sec (" << val << ") = " << 1/cos(temp) << endl;          
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 6:
-        if (ty == 2){
-            if ((int(val)) % 90 == 0){
-                if (int (sin(temp)) == 0){
-                    cout << "Cot (" << val << ") = Not Defined" << endl;                   
-                }
-                else {
-                    cout << "Cot (" << val << ") = " << int(1/tan(temp)) << endl;                   
-                }
-            }
-            else {
-                cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;               
-            }
-        }
-        else{
-            cout << "Cot (" << val << ") = " << 1/tan(temp) << endl;           
-        }
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
-    case 7:
-        cout << "------------------------------------------------------------------------" << endl;
-        main();
-        break;
-    case 8:
-         cout << "\n------------------------------------------------------------------------" << endl;
-        cout << "Thank You! For using this Software." << endl;
-        cout << "\npress any key to close the program" << endl;
-        getch();
-        break;
-    default:
-        cout << "\n------------------------------------------------------------------------" << endl;
-        cout << "''You have given WRONG Input.''" << endl;
-        cout << "------------------------------------------------------------------------" << endl;
-        trigonometric();
-        break;
     }
     return;
 }
@@ -633,7 +639,6 @@ void cho_log(){
 void quad_equ(){
     float a, b, c, disc, root1, root2, real_part, imaginary_part;
     
-
     cout << "\nThe General Quadratic equation is ax2 + bx + c \n";
     cout << "Enter the value of coefficient a, b & c\n";
     cin >> a >> b >> c;
@@ -869,7 +874,7 @@ void div(){
     cin >> num2;
     
     // If denominator is Zero then Answer will be Not Defined 
-    if (num2 == 0){
+    while (num2 == 0){
         cout << "''Not Defined''\n" << "Divisor cannot be 'Zero'. You have typed something Wrong.\n\n";
         cout << "Enter the value of Divisor 'Again' : ";
         cin >> num2;
@@ -906,17 +911,15 @@ string Bin_Dec(string binary){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(binary, 0, 2); // '2' decides that it is for binary
+    
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (binary[i] == '-'){
             result.push_back('-');
@@ -934,8 +937,8 @@ string Bin_Dec(string binary){
 
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
-        // Checking that given input is correct or not before performing calculation
+    for (int i = point + 1; i <= size-1; i++){
+        // Checking that given input is correct or not before. performing calculation
         if (binary[i] == '0' || binary[i] == '1'){
             decimal += (binary[i] - '0')*pow(2,n);
             n--;
@@ -956,17 +959,15 @@ string Oct_Dec(string octal){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(octal, 0, 8); // '8' decides that it is for octal
+
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (octal[i] == '-'){
             result.push_back('-');
@@ -983,7 +984,7 @@ string Oct_Dec(string octal){
     }
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
+    for (int i = point + 1; i <= size-1; i++){
         // Checking that given input is correct or not before performing calculation
         if (octal[i] >= '0' && octal[i] <= '7'){
             decimal += (octal[i] - '0')*pow(8,n);
@@ -1005,17 +1006,15 @@ string Hex_Dec(string hexa){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(hexa, 0, 16); // '16' decides that it is for hexa
+    
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (hexa[i] == '-'){
             result.push_back('-');
@@ -1038,7 +1037,7 @@ string Hex_Dec(string hexa){
 
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
+    for (int i = point + 1; i <= size-1; i++){
         // Condition for number 0-9
         if (hexa[i] >= '0' && hexa[i] <= '9'){
             decimal += (hexa[i] - '0')*pow(16,n);
